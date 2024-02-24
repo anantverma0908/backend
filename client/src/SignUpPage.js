@@ -39,10 +39,7 @@ const SignUpPage = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const handleSignUp = (data) => {
-    // Handle sign up logic using data.email and data.password
     console.log('Signing up with:', data.email, data.password);
-
-    // Redirect to /home after successful sign-up
     navigate('/home');
   };
 
@@ -101,7 +98,7 @@ const SignUpPage = () => {
         <Grid container justify="center">
           <Grid item>
             <Link href="/reset-password" variant="body2">
-              Forgot Password?
+              Reset Password?
             </Link>
           </Grid>
         </Grid>

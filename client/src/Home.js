@@ -6,7 +6,6 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
 
 const Home = () => {
     const [products, setProducts] = useState([]);
@@ -23,12 +22,11 @@ const Home = () => {
             const response = await axios.get(`https://fakestoreapi.com/products`);
             const allProducts = response.data;
 
-            // Filter products based on the search query
             const filteredProducts = allProducts.filter(product =>
                 product.title.toLowerCase().includes(searchQuery.toLowerCase())
             );
 
-            const itemsPerPage = 8; // Adjust this number based on your layout
+            const itemsPerPage = 8; 
             const calculatedTotalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
             setTotalPages(calculatedTotalPages);

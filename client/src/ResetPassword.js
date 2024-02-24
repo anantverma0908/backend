@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { TextField, Button, Paper, Typography, Link, Grid } from '@material-ui/core';
+import { TextField, Button, Paper, Typography, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -35,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
 
 const ResetPassword = () => {
   const classes = useStyles();
-  const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [invalid, setInvalid] = useState(false)
   const handleSignIn = (data) => {

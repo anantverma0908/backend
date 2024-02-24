@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { TextField, Button, Paper, Typography, Link, Grid } from '@material-ui/core';
+import { TextField, Button, Paper, Typography, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -11,16 +10,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         height: '100vh',
         background: 'linear-gradient(to right, #8e9eab, #eef2f3)',
-    },
-    form: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        padding: theme.spacing(4),
-        width: '30%', // Adjusted width for a narrower box
-        borderRadius: '10px',
-        boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.1)',
-        background: 'white',
     },
     form: {
         display: 'flex',
@@ -57,15 +46,10 @@ const useStyles = makeStyles((theme) => ({
 
 const RegistrationForm = () => {
     const classes = useStyles();
-    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors, isDirty } } = useForm();
     const [previewData, setPreviewData] = useState(null);
     const [formSubmitted, setFormSubmitted] = useState(false);
 
-    const handleRegistration = (data) => {
-        setFormSubmitted(true);
-
-    };
     const handlePhotoUpload = (e) => {
         const uploadedPhotos = Array.from(e.target.files).slice(0, 4);
         const photoPromises = uploadedPhotos.map((photo) => {
@@ -123,8 +107,6 @@ const RegistrationForm = () => {
                             fullWidth
                             className={classes.button}
                             onClick={() => {
-                                // Clear preview data and show the form again
-                                //   setPreviewData(null);
                                 setFormSubmitted(false);
                             }}
                         >

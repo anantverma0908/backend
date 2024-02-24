@@ -51,7 +51,6 @@ const SignInSignUpPage = () => {
       setInvalid(true)
     }
     handleSubmit()
-    // Redirect to /home after successful sign-in
     
   };
 
