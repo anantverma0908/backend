@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const routes = require('./routes/routes');
 
 app.use(bodyParser.json());
-const dbURI = "MongoDB String Paste here";
+const dbURI = "mongodb+srv://bhatiji780780:AkadBakad@cluster0.9gvmkm7.mongodb.net/server";
 
 mongoose.connect(dbURI).then(() => {
     console.log("Mongo db is connected");
